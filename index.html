@@ -303,6 +303,12 @@
             <h3>카테고리</h3>
           </div>
         </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box">
+            <i class="ri-base-station-line" style="color: #4233ff;"></i>
+            <h3>지도API</h3>
+          </div>
+        </div>
       </div>
 
     </div><!-- End Interests -->
@@ -780,7 +786,18 @@
 
       <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
         <div class="form-group">
-          <img src="./assets/img/location.PNG" style="width: 100%; height: auto;">
+          <!-- <img src="./assets/img/location.PNG" style="width: 100%; height: auto;"> -->
+          <div id="map" style="width:500px;height:400px;"></div>
+          <script type="text/javascript" src="dapi.kakao.com/v2/maps/sdk.js?appkey=5d06085a35fa95c147ca3b79f3935fef"></script>
+          <script>
+            var container = document.getElementById('map');
+            var options = {
+              center: new kakao.maps.LatLng(33.450701, 126.570667),
+              level: 3
+            };
+
+            var map = new kakao.maps.Map(container, options);
+          </script>
           <div class="validate"></div>
         </div>
       </form>
